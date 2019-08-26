@@ -6,8 +6,7 @@
 @stop
 
 @section('content')
-{{ $produtos }}
-{{ $precoTotal }}
+
 
 <table class="table table-striped">
     <thead>

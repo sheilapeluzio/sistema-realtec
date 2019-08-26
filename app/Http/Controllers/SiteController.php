@@ -120,7 +120,7 @@ class SiteController extends Controller
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
    
-                           $btn = '<a href="javascript:void(0)" class="edit btn btn-primary btn-sm">View</a>';
+                           $btn = '<a href="javascript:void(0)" class="edit btn btn-primary btn-sm">Excluir</a>';
      
                             return $btn;
                     })
@@ -130,6 +130,8 @@ class SiteController extends Controller
       
         return view('insumos');
     }
+
+
     public function produto_datatable(Request $request)
     {
         if ($request->ajax()) {
