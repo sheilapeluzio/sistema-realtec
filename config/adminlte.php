@@ -107,10 +107,7 @@ return [
     */
 
     'menu' => [
-        [
-            'text' => 'search',
-            'search' => true,
-        ],
+
         ['header' => 'MENU'],
         [
             'text' => 'blog',
@@ -120,85 +117,26 @@ return [
         [
             'text'        => 'Insumos',
             'url'         => 'insumos',
-            'icon'        => 'far fa-file',
+            'icon'        => 'fas fa-shopping-basket',
         ],
         [
             'text'        => 'Adicionar Insumo',
             'url'         => 'add_insumo',
-            'icon'        => 'far fa-file',
+            'icon'        => 'fas fa-plus',
         ],
         [
             'text'        => 'Produtos',
             'url'         => 'produtos',
-            'icon'        => 'far fa-file',
+            'icon'        => 'fas fa-shopping-basket',
         ],
         [
             'text'        => 'Adicionar Produtos',
             'url'         => 'add_produto',
-            'icon'        => 'far fa-file',
+            'icon'        => 'fas fa-plus',
         ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'aqua',
-        ],
+        
+        
+        
     ],
 
     /*

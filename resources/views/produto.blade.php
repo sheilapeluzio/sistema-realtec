@@ -28,9 +28,10 @@
         <thead>
             <tr>
                 <th>No</th>
+                <th>Codigo Idenficador</th>
                 <th>Name</th>
                 <th>Descricao</th>
-                <th width="100px">Action</th>
+                <th width="100px">Ação</th>
             </tr>
         </thead>
         <tbody>
@@ -49,6 +50,7 @@
         ajax: "{{ route('produto_datatable') }}",
         columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+            {data: 'codigo_barra', name: 'codigo_barra'},
             {data: 'nome', name: 'nome'},
             {data: 'descricao', name: 'descricao'},
             {data: 'action', name: 'action', orderable: false, searchable: false},

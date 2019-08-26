@@ -5,16 +5,12 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class Produto extends Model
+class InsumoProduto extends Model
 {
     use Notifiable;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
+    
+    protected $table = 'insumo_produto';
     protected $fillable = [
-        'codigo_barra','nome', 'descricao', 
+        'insumo_id', 'produto_id', 'quantidade',
     ];
 }

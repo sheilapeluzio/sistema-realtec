@@ -20,6 +20,7 @@ class InsumoProduto extends Migration
         
             $table->foreign('insumo_id')->references('id')->on('insumos')->onDelete('cascade');
             $table->foreign('produto_id')->references('id')->on('produtos')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

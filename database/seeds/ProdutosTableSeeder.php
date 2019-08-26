@@ -13,14 +13,15 @@ class ProdutosTableSeeder extends Seeder
     {
         Produto::create([
             'nome' => 'feijao tropeiro',
+            'cogigo_barra'=> '5050',
             'descricao'=> 'Feijão Tropeiro, feito na india',
-            'quantidade'=> '50',
+            
         ]);
 
         Produto::create([
             'nome' => 'caldo de feijao',
             'descricao'=> 'Caldo de Feijão, feita na indonesia',
-            'quantidade'=> '10',
+            'cogigo_barra'=> '5050',
         ]);
     }
 
