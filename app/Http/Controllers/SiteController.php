@@ -37,7 +37,7 @@ class SiteController extends Controller
         $produtos = DB::table('produtos')
             ->join('insumo_produto', 'produtos.id', '=', 'insumo_produto.produto_id')
             ->join('insumos', 'insumo_produto.insumo_id', '=', 'insumos.id')
-            ->select('produtos.*', 'insumo_produto.*', 'insumos.*')
+            ->select('produtos.nome as produto_nome', 'produtos.*', 'insumo_produto.*', 'insumos.*')
             ->where('produtos.id', '=', $id)
             ->get();
 
@@ -84,11 +84,19 @@ class SiteController extends Controller
         $nome = $request->input('nome');
         $descricao = $request->input('descricao');
         $insumo = $request->input('insumo');
+        $insumo1 = $request->input('insumo1');
+        $quantidade1 = $request->input('quantidade1');
         $quantidade = $request->input('quantidade');
-
+        $insumo2 = $request->input('insumo2');
+        $quantidade2 = $request->input('quantidade2');
+        
         if($codigo_barra == '' || $nome == ''
          || $descricao == '' || $insumo == '' || $quantidade == '')
             return $this->add_produto();
+
+        if($insumo1 != '' && $quantidade1 == '')
+            return $this->add_produto();
+
 
         $produto = Produto::create([
             'codigo_barra'=> $codigo_barra,
@@ -100,9 +108,22 @@ class SiteController extends Controller
             'insumo_id'=> $insumo,
             'produto_id'=> $produto->id,
             'quantidade'=> $quantidade,
-            
-
         ]);
+
+        if($insumo1 != '' && $quantidade1 != ''){
+            InsumoProduto::create([
+                'insumo_id'=> $insumo1,
+                'produto_id'=> $produto->id,
+                'quantidade'=> $quantidade1,
+            ]);
+        }
+        if($insumo2 != '' && $quantidade2 != ''){
+            InsumoProduto::create([
+                'insumo_id'=> $insumo2,
+                'produto_id'=> $produto->id,
+                'quantidade'=> $quantidade2,
+            ]);
+        }
 
         return view('produto');
     }

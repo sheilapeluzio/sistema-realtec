@@ -18,7 +18,7 @@ class CreateProdutosTable extends Migration
             $table->string('nome');
             $table->integer('codigo_barra')->unique();
             $table->longText('descricao');
-            //$table->integer('quantidade');
+            //$table->integer('quantidade_insumo');
             $table->timestamps();
         });
     }

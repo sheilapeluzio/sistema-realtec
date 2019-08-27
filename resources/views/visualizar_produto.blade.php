@@ -6,47 +6,56 @@
 @stop
 
 @section('content')
-
-
+<h3>Produto</h3>
 <table class="table table-striped">
     <thead>
       <tr>
-              <th>Id</th>
-              <th>Código de barras</th>
-              <th>Quantidade</th>
-              <th>Preço por unidade</th>
-              <th>Descriçao</th>
-              <th>Preço Total</th>
+        <th scope="col">#</th>
+        <th scope="col">Nome Produto</th>
+        <th scope="col">Codigo idenficador</th>
+        <th scope="col">Descrição</th>
       </tr>
     </thead>
     <tbody>
-      @foreach ($produtos as $produto)
-              <td scope="row">1</td>
-              <td>{{ $produto->codigo_barra }}</td>
-              <td>{{ $produto->quantidade }}</td>
-              <td>{{ $produto->preco }}</td>
-              <td>{{ $produto->descricao }}</td>
-              <td>{{ $precoTotal }}</td>
-      @endforeach
+        
+      <tr>
+        <th scope="row">1</th>
+        <td>{{ $produtos[0]->codigo_barra }}</td>
+        <td>{{ $produtos[0]->produto_nome }}</td>
+        <td>{{ $produtos[0]->descricao }}</td>
+      </tr>
+     
     </tbody>
 </table>
 
-<h1>User Profile Data</h1>
+<h3>Detalhes do Insumo Utilizado</h3> 
 <table class="table table-striped">
-    <tr>
-        <th><strong> Name: </strong></th>
-        <td> John </td>
-        <td> Joane </td>
-    </tr>
-    <tr>
-        <th><strong> Surname: </strong></th>
-        <td> Doe </td>
-        <td> Donald </td>
-    </tr>
-    <tr>
-        <th><strong> Email: </strong></th>
-        <td> john.doe@email.com </td>
-        <td> jane@email.com </td>
-    </tr>
-</table>
+    <thead>
+        <tr>
+            
+                <th>Insumo Utilizado</th>
+                <th>Quantidade Insumo</th>
+                <th>Medida</th>
+                <th>Preço por insumo</th>
+                <th>Preço total insumo</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach ($produtos as $produto)
+        <tr>
+                
+                <td>{{ $produto->nome }}</td>
+                <td>{{ $produto->quantidade }}</td>
+                <td>{{ $produto->unidade_medida }}</td>
+                <td>{{ $produto->preco }}</td>
+                <td>{{ $produto->quantidade * $produto->preco }}</td>
+        </tr>
+        @endforeach
+      </tbody>
+  </table>
+
+<h3><b>Preço total: {{ $precoTotal }}</b></h3> 
+
+
+
 @stop
